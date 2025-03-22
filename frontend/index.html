@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Requisition System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-car"></i> Vehicle Requisition Portal</h1>
+            <p>Don't forget to always be honest when requesting</p>
+        </header>
+
+        <div class="requisition-form">
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID</label>
+                        <input type="text" id="employeeId" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" required>
+                            <option value="">Select Department</option>
+                            <option value="sales">Sales</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="operations">Operations</option>
+                            <option value="management">Management</option>
+                            <option value="IT">IT</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle Type</label>
+                        <select id="vehicleType" required>
+                            <option value="">Select Vehicle</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="van">Van</option>
+                            <option value="truck">Truck</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">Purpose</label>
+                        <input type="text" id="purpose" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passengers">Number of Passengers</label>
+                        <input type="number" id="passengers" min="1" max="8" required>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="additionalNotes">Additional Notes</label>
+                    <textarea id="additionalNotes" rows="4"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                    <button type="reset" class="btn-reset">Reset Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
