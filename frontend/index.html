@@ -83,5 +83,28 @@
             </form>
         </div>
     </div>
+    <script>
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = {
+          employeeId: document.getElementById('employeeId').value,
+          department: document.getElementById('department').value,
+          vehicleType: document.getElementById('vehicleType').value,
+          purpose: document.getElementById('purpose').value,
+          startDate: document.getElementById('startDate').value,
+          endDate: document.getElementById('endDate').value,
+          destination: document.getElementById('destination').value,
+          passengers: document.getElementById('passengers').value,
+          additionalNotes: document.getElementById('additionalNotes').value,
+          submittedAt: new Date().toISOString()
+        };
+        const requests = JSON.parse(localStorage.getItem('vehicleRequests') || '[]');
+        const ref = 'VR-' + Date.now();
+        requests.push({ ...data, id: ref });
+        localStorage.setItem('vehicleRequests', JSON.stringify(requests));
+        alert('Requisition submitted! Reference: ' + ref + '\n\n(Demo mode — saved locally)');
+        e.target.reset();
+      });
+    </script>
 </body>
 </html> 
